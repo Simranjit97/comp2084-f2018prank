@@ -5,6 +5,7 @@ using F2018Pranks.Controllers;
 using F2018Pranks.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace F2018Pranks.Tests.Controllers
 {
