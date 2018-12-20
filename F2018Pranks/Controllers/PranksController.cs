@@ -12,31 +12,32 @@ namespace F2018Pranks.Controllers
 {
     public class PranksController : Controller
     {
-        private DbModel db = new DbModel();
+        //private DbModel db = new DbModel();
         private IMockPrank db;
 
-        public PranksController()
+        private PranksController()
         {
             this.db = new EFPrank();
         }
 
-        public PranksController(IMockPrank db)
+        private PranksController(IMockPrank db)
         {
             this.db = db;
         }
 
         // GET: Pranks
-        public ActionResult Index()
+        private ActionResult Index()
         {
             return View(db.Pranks.ToList());
         }
 
         // GET: Pranks/Details/5
-        public ActionResult Details(int? id)
+        private ActionResult Details(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                throw new HttpException(503, string.Format("Details id cannot be null"));
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Prank prank = db.Pranks.Find(id);
             if (prank == null)
@@ -47,7 +48,7 @@ namespace F2018Pranks.Controllers
         }
 
         // GET: Pranks/Create
-        public ActionResult Create()
+        private ActionResult Create()
         {
             return View();
         }
@@ -57,7 +58,7 @@ namespace F2018Pranks.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PrankId,Name,Description,Photo")] Prank prank)
+        private ActionResult Create([Bind(Include = "PrankId,Name,Description,Photo")] Prank prank)
         {
             if (ModelState.IsValid)
             {

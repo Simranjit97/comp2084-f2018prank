@@ -15,5 +15,10 @@ namespace F2018Pranks.Models
         {
             throw new NotImplementedException();
         }
+
+        public Prank Find(Prank prank)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
