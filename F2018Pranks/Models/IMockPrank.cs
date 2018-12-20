@@ -11,5 +11,7 @@ namespace F2018Pranks.Models
         IQueryable<Prank> Pranks { get; }
         Prank Save(Prank prank);
         Prank Find(Prank prank);
+        Prank Add(Prank prank);
+
     }
 }

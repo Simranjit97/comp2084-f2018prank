@@ -13,12 +13,39 @@ namespace F2018Pranks.Models
 
         public Prank Save(Prank prank)
         {
-            throw new NotImplementedException();
+            try
+            {
+                db.SaveChanges();
+                return prank;
+            }
+            catch
+            {
+                throw new HttpException(503, string.Format("cannot be save"));
+            }
         }
-
         public Prank Find(Prank prank)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var pranks = db.Pranks.Find(prank);
+                return pranks;
+            }
+            catch
+            {
+                throw new HttpException(503, string.Format("cannot be Found"));
+            }
+        }
+        public Prank Add(Prank prank)
+        {
+            try
+            {
+                db.SaveChanges();
+                return prank;
+            }
+            catch
+            {
+                throw new HttpException(503, string.Format("cannot be added"));
+            }
         }
     }
 }

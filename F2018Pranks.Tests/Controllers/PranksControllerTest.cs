@@ -45,6 +45,51 @@ namespace F2018Pranks.Tests.Controllers
 
             mock.Setup(m => m.Pranks).Returns(pranks.AsQueryable());
             controller = new PranksController(mock.Object);
+            string result = controller.Index();
+            Assert.AreEqual(result);
         }
+
+        public IndexViewLoads()
+        {
+            string result = controller.Index();
+            Assert.AreEqual(result);
+        }
+
+        public IndexValidLoadsPranks()
+        {
+            string result = controller.Index();
+            Assert.AreEqual(result);
+        }
+        public DetailsValidId()
+        {
+            string result = controller.Index();
+            Assert.AreEqual(result);
+        }
+        public DetailsInvalidId()
+        {
+            string result = controller.Index();
+            Assert.AreEqual(result);
+        }
+        public DetailsNoId()
+        {
+            string result = controller.Index();
+            Assert.AreEqual(result);
+        }
+        public CreateViewLoads()
+        {
+            string result = controller.Index();
+            Assert.AreEqual(result);
+        }
+        public CreateSaveInvalid()
+        {
+            string result = controller.Index();
+            Assert.AreEqual(result);
+        }
+        public CreateSaveValid()
+        {
+            string result = controller.Index();
+            Assert.AreEqual(result);
+        }
+
     }
 }

@@ -32,7 +32,7 @@ namespace F2018Pranks
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "F2018Pranks");
+                        c.SingleApiVersion("Simranjit", "200347471");
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //
